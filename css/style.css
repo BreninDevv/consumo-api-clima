@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(21, 27, 75);
+  height: 100vh;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 500px;
+  background-color: rgb(26, 34, 109);
+  padding: 48px 30px;
+  border-radius: 15px;
+  gap: 20px;
+  color: rgb(0, 0, 32);
+}
+/* icones */
+i {
+  color: rgb(0, 0, 32);
+}
+.tamanho {
+  font-size: 22px;
+}
+/* barra de pesquisa */
+input {
+  background-color: transparent;
+  border: none;
+  padding-right: 50px;
+}
+/* informações */
+.detalhes {
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+  padding-top: 50px;
+}
+.temperatura {
+  font-size: 90px;
+}
+.cidade {
+  font-size: 40px;
+}
