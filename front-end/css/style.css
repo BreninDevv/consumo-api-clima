@@ -9,6 +9,7 @@ main {
   align-items: center;
   background-color: rgb(21, 27, 75);
   height: 100vh;
+  overflow: hidden;
 }
 .card {
   display: flex;
@@ -34,6 +35,9 @@ input {
   background-color: transparent;
   border: none;
   padding-right: 50px;
+  color: rgb(0, 0, 32);
+  font-size: 16px;
+  font-weight: 500;
 }
 /* informações */
 .detalhes {

@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <main>
@@ -29,18 +29,19 @@
             src="images/8675114.png"
             alt="Imagem-clima"
             width="50px"
+            id="imagem"
           />
         </div>
-        <div class="temperatura">0 °C</div>
-        <div class="cidade">Cidade</div>
+        <div id="temperatura" class="temperatura">0 °C</div>
+        <div id="cidade" class="cidade">Cidade</div>
         <div class="detalhes">
           <div class="humidade-div">
             <span><i class="ri-contrast-drop-2-line"></i>Humidade</span>
-            <p class="humidade">0%</p>
+            <p id="humidade" class="humidade">0%</p>
           </div>
           <div class="vento-div">
             <span><i class="ri-windy-line"></i>Vento</span>
-            <p class="vento">0Km/h</p>
+            <p id="vento" class="vento">0Km/h</p>
           </div>
         </div>
       </div>
