@@ -27,7 +27,9 @@ function alterarCores(graus) {
 
 async function buscarClima() {
   const pesquisa = document.getElementById("input-clima").value;
-  const resp = await fetch(`http://localhost:3333/clima/${pesquisa}`);
+  const resp = await fetch(
+    `https://consumo-api-clima.onrender.com/clima/${pesquisa}`
+  );
   const dados = await resp.json();
 
   cidade.innerHTML = `
