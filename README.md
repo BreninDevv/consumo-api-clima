@@ -1,56 +1,73 @@
-🌩️ README do Projeto: Weather Finder Simples
-Este é um projeto simples e puramente frontend desenvolvido para demonstrar a habilidade de realizar requisições assíncronas (via fetch) a uma API externa e manipular o DOM (Document Object Model) em JavaScript. É uma prova de conceito ideal para portfólio.
+# ☁️ APICLIMA: Aplicação de Clima com Arquitetura Híbrida
 
-🌟 Destaques do Projeto (Portfólio)
-Requisições Assíncronas: Uso da API fetch do JavaScript, manipulando Promessas (.then() ou async/await) e tratando o formato JSON.
+Este é um projeto simples, ideal para portfólio, que demonstra o consumo de uma API externa (WeatherAPI) em uma arquitetura separada (Front-end e Back-end), focada na **segurança e boas práticas**.
 
-Manipulação do DOM: Atualização dinâmica da interface (HTML) baseada nos dados recebidos da API.
+O **Back-end** (Node.js/Express) é usado para ocultar a chave de API, garantindo que a informação sensível nunca seja exposta no Front-end ou no navegador do usuário.
 
-Design Simples e Responsivo: Criação de uma interface de usuário funcional com HTML e CSS.
+---
 
-Tratamento de Erros: Implementação básica de lógica para lidar com cidades não encontradas ou falhas na API.
+## ⭐ Destaques do Projeto (Portfólio)
 
-🛠️ Tecnologias Utilizadas
-Tecnologia Função Principal
-HTML5 Estrutura e marcação da página.
-CSS3 Estilização da interface.
-JavaScript (ES6+) Lógica de busca e manipulação de dados (fetch).
+- **Segurança de Chaves (Back-end):** Implementação de um servidor Node.js/Express para atuar como _proxy_, garantindo que a chave de API (armazenada em um arquivo `.env`) não seja versionada no GitHub e permaneça oculta.
+- **Requisições Assíncronas:** Uso da API nativa `fetch` do JavaScript, manipulando Promessas (`async/await`) para consumir a API externa via back-end.
+- **Manipulação do DOM:** Atualização dinâmica da interface (HTML) com base nos dados meteorológicos recebidos.
+- **Design e Responsividade:** Interface funcional criada com HTML e CSS puro.
+- **Tratamento de Erros:** Lógica de tratamento de erros no servidor para lidar com falhas na API ou cidades não encontradas.
 
-Exportar para as Planilhas
+---
 
-🚀 Configuração e Execução
-Como este é um projeto estático (frontend), a execução é muito simples.
+## 🛠️ Tecnologias Utilizadas
 
-1. Pré-requisitos (Chave da API)
-   Você precisará de uma chave de API de um serviço de clima.
+| Camada           | Tecnologia                   | Função                                                     |
+| :--------------- | :--------------------------- | :--------------------------------------------------------- |
+| **Front-end**    | `HTML5`, `CSS3`              | Estrutura da página e estilização da interface.            |
+| **Front-end**    | `JavaScript (ES6+)`          | Lógica de busca e manipulação de dados (DOM e `fetch`).    |
+| **Back-end**     | `Node.js`, `Express`         | Criação do servidor para a rota `/clima/:cidade`.          |
+| **Back-end**     | `dotenv`                     | Gerenciamento seguro de variáveis de ambiente (`API_KEY`). |
+| **Configuração** | `.gitignore`, `.env.example` | Boas práticas de segurança para não expor a chave de API.  |
 
-2. Configurando sua Chave
-   Clone o repositório:
+---
+
+## ⚙️ Configuração e Execução (Passo a Passo)
+
+Para rodar este projeto, você precisará de um ambiente com **Node.js** e o **npm** instalados.
+
+### 1. Clonar o Repositório e Instalar Dependências
+
+```bash
+# Clone o repositório
+git clone "https://github.com/BreninDevv/consumo-api-clima"
+cd apiclima/back-end
+
+# Instale as dependências do Back-end (Express, dotenv, cors)
+npm install
+2. Configurar a Chave da API (Crucial!)
+O projeto usa a WeatherAPI.
+
+Obtenha uma Chave Gratuita no site da WeatherAPI.
+
+Crie um novo arquivo chamado .env dentro da pasta back-end.
+
+Copie e cole a linha abaixo no seu arquivo .env, substituindo SUA_CHAVE_AQUI pela chave real que você obteve.
+
+# back-end/.env
+API_KEY="SUA_CHAVE_AQUI"
+
+3. Execução do Projeto
+Este projeto requer que o Back-end e o Front-end rodem em paralelo.
+
+A. Iniciar o Servidor (Back-end)
+Na pasta back-end, inicie o servidor Node.js:
 
 Bash
 
-git clone: "https://github.com/BreninDevv/consumo-api-clima.git"
-cd APICLIMA
-Abra o arquivo de JavaScript (ex: script.js).
+npm start
+# Alternativamente: node server.js
+O servidor iniciará na porta 3333 e estará pronto para receber requisições do Front-end.
 
-Substitua o placeholder pela sua chave real, conforme o exemplo abaixo:
+B. Iniciar o Front-end
+Abra o arquivo front-end/index.html no seu navegador.
 
-JavaScript
+Recomendação: Para evitar problemas de CORS ou requisições locais, utilize uma extensão como Live Server (VS Code) para abrir o index.html. As requisições JavaScript (script.js) esperam que o Front-end esteja rodando em http://localhost:5500 ou http://127.0.0.1:5500.
 
-// No arquivo script.js
-const API_KEY = "Sua chave Api!!"; // <-- insira sua chave!
-const BASE_URL = "https://api.weatherapi.com/v1/current.json?key=SUA_CHAVE&q=São+Paulo&lang=pt
-";
-Atenção: Mantenha a chave apenas para fins de demonstração neste projeto simples.
-
-3. Execução
-   Basta abrir o arquivo index.html em qualquer navegador moderno.
-
-📄 Estrutura de Arquivos
-.
-├── index.html # Interface do usuário (Input, Display, etc.)
-├── css/
-│ └── style.css # Estilização
-├── js/
-│ └── script.js # Lógica do projeto (fetch e DOM)
-└── README.md
+```

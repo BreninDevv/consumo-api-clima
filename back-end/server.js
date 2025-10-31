@@ -12,7 +12,7 @@ app.use(
   })
 );
 
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 const API_KEY = process.env.API_KEY;
 
 app.get("/clima/:cidade", async (req, res) => {
