@@ -1,31 +1,42 @@
+:root {
+  --bg-color: rgb(21, 27, 75);
+  --text-color: rgb(0, 0, 32);
+  --body-color: rgb(21, 27, 75);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  transition: 1s;
+  background-color: var(--body-color);
+}
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(21, 27, 75);
+
   height: 100vh;
   overflow: hidden;
 }
+/* card */
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 350px;
   height: 500px;
-  background-color: rgb(26, 34, 109);
+  background-color: var(--bg-color);
   padding: 48px 30px;
   border-radius: 15px;
   gap: 20px;
-  color: rgb(0, 0, 32);
+  color: var(--text-color);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 /* icones */
 i {
-  color: rgb(0, 0, 32);
+  color: var(--text-color);
 }
 .tamanho {
   font-size: 22px;
@@ -35,7 +46,7 @@ input {
   background-color: transparent;
   border: none;
   padding-right: 50px;
-  color: rgb(0, 0, 32);
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 500;
 }
@@ -47,8 +58,13 @@ input {
   padding-top: 50px;
 }
 .temperatura {
-  font-size: 90px;
+  font-size: 50px;
 }
 .cidade {
-  font-size: 40px;
+  font-size-adjust: 0px;
+  font-weight: 700;
+}
+/* imagem */
+.image-clima {
+  width: 100px;
 }
